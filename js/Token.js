@@ -43,4 +43,13 @@ class Token {
         }
     }
 
+    drop(target, reset) {
+        this.dropped = true;
+        console.log('Drop Token Triggered');
+
+        $(this.htmlToken).animate({
+            top: (target.y * target.diameter)
+        }, 750, 'easeOutBounce', reset);
+    }
+
 }
